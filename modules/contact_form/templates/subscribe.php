@@ -33,17 +33,26 @@
             <div class="control-group form-group">
                 <?php if(get_option('disable_captcha', $params['id']) !='y'): ?>
                     <label class="custom-field-title"><?php _e("Enter Security code"); ?></label>
-                    <div class="mw-ui-row captcha-holder">
+                    <div class="mw-ui-row-nodrop captcha-holder" style="width: 100%;background: white;border-radius: 3px 0 0 3px">
 
-                        <div class="mw-ui-col">
-                          <img onclick="mw.tools.refresh_image(this);" class="mw-captcha-img" id="captcha-<?php print $form_id; ?>" src="<?php print api_link('captcha') ?>" />
+                        <div class="mw-ui-col" onclick="mw.tools.refresh_image(this.getElementsByTagName('img')[0]);">
+                            <div class="mw-ui-col-container">
+                            <img class="mw-captcha-img" id="captcha-<?php print $form_id; ?>" src="<?php print api_link('captcha') ?>" />
+                          </div>
+                        </div>
+                        <div class="mw-ui-col" style="border-left: 2px solid #eee;">
+                            <div class="mw-ui-col-container">
+                                <input name="captcha" type="text" required class="mw-ui-invisible-field mw-captcha-input"/>
+                            </div>
                         </div>
                         <div class="mw-ui-col">
-                            <input name="captcha" type="text" required class="mw-ui-field mw-captcha-input"/>
+                            <div class="mw-ui-col-container">
+                                <input type="submit" class="mw-ui-btn mw-ui-btn-invert pull-right" style="margin-left: 12px;"  value="<?php _e("Subscribe"); ?>" />
+                            </div>
                         </div>
 
                     </div>
-                    <input type="submit" class="mw-ui-btn mw-ui-btn-invert pull-right" style="margin-left: 12px;"  value="<?php _e("Subscribe"); ?>" />
+
                 <?php else:  ?>
                     <input type="submit" class="mw-ui-btn mw-ui-btn-invert pull-right"  value="<?php _e("Subscribe"); ?>" />
                 <?php endif; ?>

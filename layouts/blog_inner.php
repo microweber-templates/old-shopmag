@@ -4,14 +4,12 @@
            <div class="mw-ui-row">
                <div class="mw-ui-col">
                  <div class="mw-ui-col-container">
-                   <div class="item-box pad">
+                   <div class="item-box pad" data-mw="main">
                         <h3 class="page-title edit" field="title" rel="content">Page Title</h3>
-                        <div class="edit post-content richtext" field="content" rel="content">
+                        <div class="post-content richtext">
                           <module data-type="pictures" data-template="slider"  rel="content"  />
-                          <div class="edit" field="content_body" rel="content">
-                            <div class="element">
-                              <p align="justify">This text is set by default and is suitable for edit in real time. By default the drag and drop core feature will allow you to position it anywhere on the site. Get creative, Make Web.</p>
-                            </div>
+                          <div class="edit"  field="content" rel="content">
+                            <p class="element">This text is set by default and is suitable for edit in real time. By default the drag and drop core feature will allow you to position it anywhere on the site. Get creative, Make Web.</p>
                           </div>
                         </div>
                         <hr />

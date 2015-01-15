@@ -118,7 +118,7 @@ description: Full width cart template
                 <?php } ?>
                 <tr>
                    <td><label><?php _e("Total Price"); ?>:</label></td>
-                   <td  class="cell-shipping-total"> <span class="total_cost"><?php print currency_format($total + intval(mw('user')->session_get('shipping_cost'))); ?></span></td>
+                   <td  class="cell-shipping-total"> <span class="total_cost"><?php print currency_format($total + intval(mw()->user_manager->session_get('shipping_cost'))); ?></span></td>
                 </tr>
             </tbody>
         </table>

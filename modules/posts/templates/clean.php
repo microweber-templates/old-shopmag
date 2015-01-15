@@ -46,6 +46,10 @@ description: Clean
     </div>
     <?php endforeach; ?>
 
+  <?php else: ?>
+  <div class="module-posts-template-clean-item item-box pad">
+    <h3>No posts found.</h3>
+  </div>
   <?php endif; ?>
 </div>
 <?php if (isset($pages_count) and $pages_count > 1 and isset($paging_param)): ?>

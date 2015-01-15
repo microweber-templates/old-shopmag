@@ -8,14 +8,14 @@ $prev = prev_content();
 <div class="mw-wrapper" style="padding: 40px 0px;">
     <div data-mw="main">
         <div class="mw-ui-row shop-product-row">
-            <div class="mw-ui-col" style="width:45%">
+            <div class="mw-ui-col" style="width:55%">
                 <div class="mw-ui-col-container">
                     <div class="item-box" id="product-page-gallery">
                         <module type="pictures" rel="content" template="product_gallery"/>
                     </div>
                 </div>
             </div>
-            <div class="mw-ui-col" style="width:55%">
+            <div class="mw-ui-col" style="width:45%">
                 <div class="mw-ui-col-container">
                     <div class="product-description">
                         <div class="item-box pad">
@@ -31,8 +31,7 @@ $prev = prev_content();
                                                data-tip="#prev-tip"></a>
                                             <div id="prev-tip" style="display: none">
                                                 <div class="next-previous-tip-content">
-                                                    <img src="<?php print get_picture($prev['id']); ?>" alt=""
-                                                         width="90"/>
+                                                    <img src="<?php print get_picture($prev['id']); ?>" alt="" width="90"/>
                                                     <h6><?php print $prev['title']; ?></h6>
                                                 </div>
                                             </div>
@@ -43,8 +42,7 @@ $prev = prev_content();
                                                data-tip="#next-tip"></a>
                                             <div id="next-tip" style="display: none">
                                                 <div class="next-previous-tip-content">
-                                                    <img src="<?php print get_picture($next['id']); ?>" alt=""
-                                                         width="90"/>
+                                                    <img src="<?php print get_picture($next['id']); ?>" alt="" width="90"/>
                                                     <h6><?php print $next['title']; ?></h6>
                                                 </div>
                                             </div>
@@ -75,7 +73,7 @@ $prev = prev_content();
 
         <h2 class="section-title element">Related Products</h2>
         <hr>
-        <module type="shop/products" template="horizontal_slider" id="related-products-module" related="true" limit="7"
+        <module type="shop/products" template="horizontal_slider" id="related-products-module" related="true" limit="4"
                 ajax-paging="true"
                 data-show="thumbnail,title,add_to_cart,price"/>
 

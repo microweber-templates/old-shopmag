@@ -48,71 +48,9 @@
       }
 
 
-      $demo = false;
+
 
    ?><body class="<?php print(implode(' ', $template_settings));  ?>">
-
-
-   <?php if($demo == true){ ?>
-
-    <div class="previewctrl" style="position: fixed;top:120px;left:20px;z-index:99999999;cursor: default">
-
-        <div class="mw-ui-box">
-          <div class="mw-ui-box-header">
-            <span class="mw-icon-template"></span><span>Template Options</span></div>
-            <div class="mw-ui-box-content" style="background-color: white">
-                <label class="mw-ui-label">Layout type</label>
-                <div class="mw-ui-btn-nav">
-                    <a class="mw-ui-btn active" onclick="$(document.body).removeClass('fixed');$(this).addClass('active');$(this).next().removeClass('active')">Fluid</a>
-                    <a class="mw-ui-btn" onclick="$(document.body).addClass('fixed');$(this).addClass('active');$(this).prev().removeClass('active')">Fixed</a>
-                </div>
-                <label class="mw-ui-label">Colors</label>
-               <script>
-               smsetcolor = function(el){
-                mw.tools.classNamespaceDelete(mwd.body, 'shopmag-');
-                mw.tools.addClass(mwd.body, $(el).dataset('val'));
-               }
-               mw.require('jquery-ui.js');
-               $(document).ready(function(){
-                $(".previewctrl").draggable({containment:'window'});
-               })
-               smfontselect = function(name){
-                        mw.tools.classNamespaceDelete(parent.mwd.body, 'smfont-');
-                        mw.tools.addClass(parent.mwd.body, name);
-                   }
-               </script>
-                <style>
-
-                .template-color{
-                  display: inline-block;
-                  width: 20px;
-                  height: 20px;
-                  cursor: pointer;
-                  border: 1px solid #ddd;
-                  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
-                  margin:5px;
-                }
-
-                </style>
-
-                <span class="template-color" data-val="" onclick="smsetcolor(this)" style="background-color:#000;"></span>
-                <span class="template-color" data-val="shopmag-red" onclick="smsetcolor(this)" style="background-color:#DB0743;"></span>
-                <span class="template-color" data-val="shopmag-purple" onclick="smsetcolor(this)" style="background-color:#C27AC1;"></span> <br>
-                <span class="template-color" data-val="shopmag-orange" onclick="smsetcolor(this)" style="background-color:#EE9A00;"></span>
-                <span class="template-color" data-val="shopmag-blue" onclick="smsetcolor(this)" style="background-color:#0092DB;"></span>
-                <span class="template-color" data-val="shopmag-violet" onclick="smsetcolor(this)" style="background-color:#CD6889;"></span>
-                <hr>
-                <label class="mw-ui-label">Font</label>
-                <select class="mw-ui-field" id="smfontselect" onchange="smfontselect(this.value)">
-                    <option value="">Source Sans Pro (Default)</option>
-                    <option value="smfont-arial">Arial</option>
-                    <option value="smfont-georgia">Georgia</option>
-                    <option value="smfont-exo">Exo 2</option>
-                </select>
-            </div>
-        </div>
-
-    </div>   <?php  } ?>
 
     <div id="wrapper">
 

@@ -38,6 +38,7 @@ if(!isset($tn[1])){
     <?php
 
 
+
     $count = -1;
     foreach ($data as $item):
 
@@ -88,14 +89,6 @@ if(!isset($tn[1])){
       <?php if($show_fields != false and in_array('created_at', $show_fields)): ?>
       <span class="date"><?php print $item['created_at'] ?></span>
       <?php endif; ?>
-
-
-
-
-
-
-
-
 
       <div class="module-products-template-slider-item-price-holder">
         <?php if($show_fields == false or in_array('price', $show_fields)): ?>

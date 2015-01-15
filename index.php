@@ -75,28 +75,22 @@
         <div class="mw-row text-center">
               <div class="mw-col" style="width: 33.333%">
                 <div class="mw-col-container">
-                    <span style="display: inline-block; padding: 12px; opacity: 0.6; min-width: 100px; margin-bottom: 12px; font-size: 62px; Xtext-shadow: 1px 1px 0px rgba(0, 0, 0, 0.48); border-radius: 6px;">
-                        <span class="mw-icon-truck"></span>
-                    </span>
+                    <p class="iconfeature-holder mw-icon-truck mw-icon-changeble">&nbsp;
+                    </p>
                     <h4>Free Shipping</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisi augue, tempus sed pellentesque in, posuere id tortor. Vestibulum ultrices nunc pretium.</p>
                 </div>
               </div>
               <div class="mw-col" style="width: 33.333%">
                 <div class="mw-col-container">
-                    <span style="display: inline-block; padding: 12px;  opacity: 0.6;  min-width: 100px; margin-bottom: 12px; font-size: 62px; Xtext-shadow: 1px 1px 0px rgba(0, 0, 0, 0.48); border-radius: 6px;">
-                        <span class="mw-icon-users"></span>
-                    </span>
-
+                        <p class="iconfeature-holder mw-icon-users mw-icon-changeble">&nbsp; </p>
                     <h4>Customer service</h4>
                     <p>Phasellus in dignissim urna, sed ornare nisi. Nam molestie velit at imperdiet aliquam. Etiam sit amet erat vitae ex maximus pulvinar.</p>
                 </div>
               </div>
               <div class="mw-col" style="width: 33.333%">
                 <div class="mw-col-container">
-                    <span style="display: inline-block; padding: 12px;  opacity: 0.6;  min-width: 100px; margin-bottom: 12px; font-size: 62px; Xtext-shadow: 1px 1px 0px rgba(0, 0, 0, 0.48); border-radius: 6px;">
-                        <span class="mw-icon-product"></span>
-                    </span>
+                    <p class="iconfeature-holder mw-icon-product mw-icon-changeble">&nbsp; </p>
                     <h4>Shop Now</h4>
                     <p>Vivamus venenatis sem nulla, sed ullamcorper massa posuere at. Donec quis sapien semper nunc lobortis feugiat. Curabitur accumsan, nisi et ultrices.</p>
                 </div>
