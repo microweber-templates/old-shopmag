@@ -75,7 +75,7 @@ if(!isset($tn[1])){
 
 				 <?php if(is_array( $item['prices'])): ?>
 
-                 <span class="sm-icon-bag btnaddtocart tip pull-right" data-tip="<?php print $add_cart_text ?>" onclick="AddToCart('.mw-add-to-cart-<?php print $item['id'].$count ?>','<?php print $val1; ?>', '<?php print $item['title']; ?>');"></span>
+                 <span class="sm-icon-bag btnaddtocart tip pull-right" data-tip="<?php print $add_cart_text ?>" onclick="mw.cart.add('.mw-add-to-cart-<?php print $item['id'].$count ?>','<?php print $val1; ?>', '<?php print $item['title']; ?>');"></span>
 
 
                 <?php endif; ?>

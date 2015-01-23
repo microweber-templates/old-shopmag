@@ -13,6 +13,7 @@ description: Shopmag
 
 
 
+
 <?php
 
 
@@ -146,7 +147,7 @@ if(!isset($tn[1])){
 
                 <?php /*<button class="mw-ui-btn mw-ui-btn-invert" type="button" onclick="mw.cart.add('.mw-add-to-cart-<?php print $item['id'].$count ?>');">&nbsp;<?php print $add_cart_text ?></button>*/ ?>
 
-                    <span class="sm-icon-bag btnaddtocart tip pull-right" data-tipposition="left-center" data-tip="<?php print $add_cart_text ?>" onclick='AddToCart(".mw-add-to-cart-<?php print $item['id'].$count ?>","<?php print $val1; ?>", "<?php print  $item['title'] ; ?>");'></span>
+                    <span class="sm-icon-bag btnaddtocart tip pull-right" data-tipposition="left-center" data-tip="<?php print $add_cart_text ?>" onclick='mw.cart.add(".mw-add-to-cart-<?php print $item['id'].$count ?>","<?php print $val1; ?>");'></span>
 
 
 

@@ -33,10 +33,7 @@ description: Dropdown cart template
         <td class="mw-cart-table-product">
 
         <?php
-            $substrTitle = substr($item['title'], 0, 20);
-            if($substrTitle != $item['title']){
-                $substrTitle = $substrTitle. '...';
-            }
+            $substrTitle =  character_limiter($item['title'],20,'...');
         ?>
 
             <?php print $substrTitle; ?>

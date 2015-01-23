@@ -51,7 +51,7 @@ $prev = prev_content();
                                 </div>
                             </div>
                             <h2 class="edit post-title" field="title" rel="post" style="padding: 20px 0 10px;">Product inner page</h2>
-                            <module type="sharer">
+                            <module type="sharer" id="product-sharer">
                             <hr>
                             <div class="edit product-description" field="content_body" rel="post">
                                 <p class="element">This text is set by default and it is suitable for edit in real time.
@@ -73,7 +73,7 @@ $prev = prev_content();
 
         <h2 class="section-title element">Related Products</h2>
         <hr>
-        <module type="shop/products" template="horizontal_slider" id="related-products-module" related="true" limit="4"
+        <module type="shop/products" id="related-products-module" related="true" limit="4"
                 ajax-paging="true"
                 data-show="thumbnail,title,add_to_cart,price"/>
 

@@ -4,14 +4,12 @@
 
 type: layout
 
-name: Post Bottom
+name: Default
 
 description: Can be used as: Horizontal slider in the Bottom part of the post
 
 */
 ?>
-
-
 
 <?php
 
@@ -47,7 +45,9 @@ if(!isset($tn[1])){
     ?>
 
 
-    <?php $hasDescription = ($show_fields == false or ($show_fields != false and  is_array($show_fields) and  in_array('description', $show_fields))); ?>
+
+
+    <?php $hasDescription = ($show_fields != false and  is_array($show_fields) and  in_array('description', $show_fields) and $item['description'] != ''); ?>
 
     <div class="module-products-template-slider-item <?php if($hasDescription){print 'tip';} ?>"  <?php if($hasDescription){ print 'data-tipposition="top-center" data-tip="#description-tip-'.  $item['id']  .'"'; }?>>
 
@@ -93,13 +93,13 @@ if(!isset($tn[1])){
       <div class="module-products-template-slider-item-price-holder">
         <?php if($show_fields == false or in_array('price', $show_fields)): ?>
         <?php if(isset($item['prices']) and is_array($item['prices'])){  ?>
-	    <?php 
+	    <?php
 		$vals2 = array_values($item['prices']);
 		$val1 = array_shift($vals2); ?>
         <span class="price"><?php print currency_format($val1); ?></span>
 
          <?php } else{ ?>
-
+            <span class="price">&nbsp;</span>
         <?php } ?>
         <?php endif; ?>
         <?php if($show_fields == false or in_array('add_to_cart', $show_fields)): ?>
@@ -111,7 +111,7 @@ if(!isset($tn[1])){
 
 				 <?php if(is_array( $item['prices'])): ?>
 
-                <span class="sm-icon-bag btnaddtocart tip" data-tip="<?php _e("Add to cart"); ?>" onclick="AddToCart('.mw-add-to-cart-<?php print $item['id'].$count ?>','<?php print $val1; ?>', '<?php print $item['title']; ?>');"></span>
+                 <span class="sm-icon-bag btnaddtocart tip" data-tip="<?php _e("Add to cart"); ?>" onclick="mw.cart.add('.mw-add-to-cart-<?php print $item['id'].$count ?>','<?php print $val1; ?>');"></span>
 
                 <?php endif; ?>
         <?php endif; ?>
@@ -130,6 +130,8 @@ if(!isset($tn[1])){
         <input type="hidden"  name="content_id" value="<?php print $item['id'] ?>" />
       </div>
       <?php break; endforeach ; ?>
+      <?php else: ?>
+      <div class="clear"></div>
       <?php endif; ?>
     </div>
     </div>

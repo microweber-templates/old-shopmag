@@ -53,6 +53,7 @@
    ?><body class="<?php print(implode(' ', $template_settings));  ?>">
 
     <div id="wrapper">
+    <div id="content-master">
 
     <div id="header-holder">
       <div id="header">

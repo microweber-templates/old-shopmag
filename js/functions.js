@@ -1,20 +1,5 @@
 
-AddToCart = window.AddToCart || function(selector, id, title){
-   mw.cart.add(selector, id, function(){
-     if(document.getElementById('AddToCartModal') === null){
-       AddToCartModal = mw.modal({
-          content:AddToCartModalContent(title),
-          template:'mw_modal_basic',
-          name:"AddToCartModal",
-          width:400,
-          height:200
-       });
-     }
-     else{
-       AddToCartModal.container.innerHTML = AddToCartModalContent(title);
-     }
-   });
-}
+
 
 
 EqualHeight = function(selector){
@@ -69,7 +54,24 @@ window.mw.iconSelector = window.mw.iconSelector || {
 
 
 $(document).ready(function(){
-
+    $(window).bind('mw.cart.add', function(event, data){
+        if(document.getElementById('AddToCartModal') === null){
+           AddToCartModal = mw.modal({
+              content:AddToCartModalContent(data.product.title),
+              template:'mw_modal_basic',
+              name:"AddToCartModal",
+              width:400,
+              height:200
+           });
+         }
+         else{
+           AddToCartModal.container.innerHTML = AddToCartModalContent(data.product.title);
+         }
+    });
+    $(window).bind('load resize', function(){
+        document.getElementById('content-master').style.minHeight = ($(window).height() - $('#footer').outerHeight()) + 'px';
+    });
+    document.getElementById('content-master').style.minHeight = ($(window).height() - $('#footer').outerHeight()) + 'px';
 
     $(window).bind('load', function(){
        var slider = $('#homeslider .magic-slider')[0];
@@ -94,7 +96,7 @@ $(document).ready(function(){
                 mw.iconSelector.popup();
             }
             else{
-               mw.iconSelector.hide()
+               mw.iconSelector.hide();
             }
 
           });
@@ -105,6 +107,18 @@ $(document).ready(function(){
         $(this).toggleClass('active');
     });
 
+    $(".header-shopcarts-holder").hover(function(e){
+      $(this).addClass('active');
+      $(this).addClass('hovered');
+    }, function(){
+      var el = $(this);
+      el.removeClass('hovered');
+      setTimeout(function(){
+        if(!el.hasClass('hovered')){
+          el.removeClass('active');
+        }
+      }, 500);
+    });
     $(document.body).bind('mousedown', function(e){
         if(!mw.tools.hasParentsWithClass(e.target, 'header-menu')){
             $('.menu-button.active').removeClass('active');

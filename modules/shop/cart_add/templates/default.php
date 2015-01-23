@@ -17,7 +17,7 @@ if(isset($params['content-id'])){
   $title =  $product['title'];
 }
 else{
-  $title =  _e("Product");
+  $title =  _e("Product",true);
 }
 
 
@@ -42,7 +42,7 @@ $(mwd).ready(function(){
   <?php $count = 0; foreach($data as $key => $v ): $count++; ?>
   <div class="mw-price-item"> <span class="mw-price">
     <label class="mw-ui-check price-checkbox <?php if(!isset( $in_stock) or  $in_stock == false){ print 'mw-disabled'; } ?> ">
-      <input type="radio" class="no-post" name="prices" <?php if(!isset( $in_stock) or  $in_stock == false){ print 'disabled'; } ?> value="<?php print $v ?>" <?php if($count ==1 ){  print 'checked'; } ?> data-set="AddToCart('.mw-add-to-cart-<?php print $params['id'] ?>','<?php print $v ?>', '<?php print $title; ?>');">
+      <input type="radio" class="no-post" name="prices" <?php if(!isset( $in_stock) or  $in_stock == false){ print 'disabled'; } ?> value="<?php print $v ?>" <?php if($count ==1 ){  print 'checked'; } ?> data-set="mw.cart.add('.mw-add-to-cart-<?php print $params['id'] ?>','<?php print $v ?>', '<?php print $title; ?>');">
       <span></span> <span>
       <?php if(is_string($key) and trim(strtolower($key)) == 'price'): ?>
       <span class="mw-price-key">
@@ -62,7 +62,7 @@ $(mwd).ready(function(){
   <div class="product-add-to-cart-holder">
     <button class="product-add-to-cart<?php if(!isset( $in_stock) or  $in_stock == false){ print ' mw-disabled'; }?>" type="button"
 
-              <?php if(!isset( $in_stock) or  $in_stock == false){ ?> onclick="Alert('This Item is out of Stock');"<?php }  else { ?> onclick="AddToCart('.mw-add-to-cart-<?php print $params['id']; ?>','<?php print $v_1 ?>', '<?php print $title; ?>');" <?php } ?>>
+              <?php if(!isset( $in_stock) or  $in_stock == false){ ?> onclick="Alert('This Item is out of Stock');"<?php }  else { ?> onclick="mw.cart.add('.mw-add-to-cart-<?php print $params['id']; ?>','<?php print $v_1 ?>', '<?php print $title; ?>');" <?php } ?>>
     <span class="sm-icon-bag2"></span>
     <?php if(!isset( $in_stock) or  $in_stock == false){ ?>
     <?php _e("Out of stock"); ?>
@@ -83,7 +83,7 @@ $(mwd).ready(function(){
     <?php endif; ?>
     <span class="mw-price-value"><?php print currency_format($v); ?></span> </span> </div>
   <div class="product-add-to-cart-holder">
-    <button class="product-add-to-cart" type="button"  <?php if(!isset( $in_stock) or  $in_stock == false){ ?> onclick="Alert('This Item is out of Stock');"<?php }  else { ?> onclick="AddToCart('.mw-add-to-cart-<?php print $params['id']; ?>','<?php print $v ?>', '<?php print $title; ?>');"<?php } ?>>
+    <button class="product-add-to-cart" type="button"  <?php if(!isset( $in_stock) or  $in_stock == false){ ?> onclick="Alert('This Item is out of Stock');"<?php }  else { ?> onclick="mw.cart.add('.mw-add-to-cart-<?php print $params['id']; ?>','<?php print $v ?>', '<?php print $title; ?>');"<?php } ?>>
     <span class="sm-icon-bag2"></span>
     <?php if(!isset( $in_stock) or  $in_stock == false){ ?>
     <?php _e("Out of stock"); ?>

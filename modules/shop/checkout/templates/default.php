@@ -80,14 +80,14 @@ description: Default cart template
             </div>
 
             <?php  $shipping_options =  mw('shop\shipping\shipping_api')->get_active(); ?>
-            <?php if ($cart_show_shipping != 'n' and !empty($shipping_options)): ?>
+            <?php if (in_live_edit() or ($cart_show_shipping != 'n' and !empty($shipping_options))): ?>
                 <div class="mw-ui-col">
                     <div class="mw-ui-col-container">
                         <module type="shop/shipping"/>
                     </div>
                 </div>
             <?php endif;?>
-            <?php if ($cart_show_payments != 'n'): ?>
+            <?php if (in_live_edit() or $cart_show_payments != 'n'): ?>
 
                 <div class="mw-ui-col">
                     <div class="mw-ui-col-container">

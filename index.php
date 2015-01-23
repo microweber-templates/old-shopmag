@@ -115,7 +115,7 @@
               </div>
             </div>
         </div>
-            <div class="item-box pad"><module type="shop/products" template="horizontal_slider.php" hide_paging="true" data-show="thumbnail,title,price" /></div>
+            <div class="item-box pad"><module type="shop/products"  hide_paging="true" data-show="thumbnail,title,price" /></div>
         </div>
 </div>
 <?php include THIS_TEMPLATE_DIR. "footer.php"; ?>

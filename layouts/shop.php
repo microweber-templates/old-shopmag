@@ -15,19 +15,18 @@ position: 3
 <?php include TEMPLATE_DIR. "header.php"; ?>
 
 <div class="mw-wrapper content-holder">
-  <div class="eXdit" rel="page" field="content">
-        <div class="mw-row" style="width:100%;">
-            <div class="mw-col" style="width: 50%;">
-              <div class="mw-col-container">
+  <div class="edit" rel="page" field="content">
+        <div class="mw-ui-row" style="width:100%;margin-bottom: 20px;">
+            <div class="mw-ui-col" style="width: 50%;">
+              <div class="mw-ui-col-container">
                   <div class="mw-breadcrumb-root"><module type="breadcrumb"></div>
               </div>
             </div>
-            <div class="mw-col" style="width: 25%;">
 
-            </div>
-            <div class="mw-col" style="width: 25%;">
-                <div class="mw-col-container">
-                    <module type="categories" template="dropdown" class="pull-right w100" />
+            <div class="mw-ui-col" style="width: 50%" >
+                <div class="mw-col-ui-container">
+                    <module type="categories" template="dropdown" class="pull-right" />
+                    <label class="mw-clabel">Categories</label>
                 </div>
             </div>
         </div>
