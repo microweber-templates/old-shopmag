@@ -1,6 +1,6 @@
 <?php include TEMPLATE_DIR . "header.php"; ?>
 
-<div class="mw-wrapper content-holder">
+<div class="mw-wrapper content-holder" id="content-holder-<?php print CONTENT_ID ?>">
     <div class="mw-ui-row">
         <div class="mw-ui-col">
             <div class="mw-ui-col-container">

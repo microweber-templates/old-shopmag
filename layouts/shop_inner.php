@@ -5,7 +5,7 @@ $prev = prev_content();
 
 
 ?>
-<div class="mw-wrapper" style="padding: 40px 0px;">
+<div class="mw-wrapper" style="padding: 40px 0px;" id="product-holder-<?php print CONTENT_ID ?>">
     <div data-mw="main">
         <div class="mw-ui-row shop-product-row">
             <div class="mw-ui-col" style="width:55%">

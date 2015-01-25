@@ -31,6 +31,6 @@ foreach($cats as $cat){
     $latest_product = $latest_product[0];
     $pic = get_picture($latest_product['id']);
 ?>
-  <a href="<?php print category_link($cat['id']);;  ?>"> <span class="bgimg" style="background-image: url(<?php print $pic; ?>);"></span> <strong><?php print $cat['title']; ?></strong> </a>
+  <a href="<?php print category_link($cat['id']);;  ?>"> <span class="bgimg" style="background-image: url(<?php print thumbnail($pic, 600, 600); ?>);"></span> <strong><?php print $cat['title']; ?></strong> </a>
   <?php } } else{  print lnotif ('Select category'); } ?>
 </div>

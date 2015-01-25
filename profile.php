@@ -152,7 +152,8 @@ $(document).ready(function(){
     <div class="mw-ui-box mw-ui-box-important mw-ui-box-content" id="errnotification" style="display: none;margin-bottom: 12px;"></div>
     <span class="mw-ui-btn mw-ui-btn-invert pull-right" onclick="saveuserdata()">Save</span>
 
-</div></div>
+</div>
+</div>
 
 
 
