@@ -14,7 +14,7 @@
                       <?php print $slide['secondaryText']; ?>
                     <?php } ?>
                 </p>
-                <a class="mw-ui-btn mw-ui-btn-big mw-ui-btn-invert" href="<?php if(isset($slide['url'])){print $slide['url'];} ?>">See More</a>
+                <a class="mw-ui-btn mw-ui-btn-big mw-ui-btn-invert" href="<?php if(isset($slide['url'])){print $slide['url'];} ?>"><?php print $slide['seemoreText']  ?></a>
             </div>
         </div>
         <div class="mw-ui-col" style="width: 0%;display: none;"></div>

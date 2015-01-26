@@ -84,6 +84,7 @@
         'images' => '',
         'primaryText' => 'Magic Slider',
         'secondaryText' => 'Nunc blandit malesuada magna nec luctus.',
+        'seemoreText' => 'See more',
         'url' => '',
         'urlText' => '',
         'skin' =>'default'
@@ -154,6 +155,15 @@
           <label class="mw-ui-label">URl</label>
           <input type="text" class="mw-ui-field magic-url" value="<?php print $slide['url']; ?>">
       </div>
+<?php if(!isset($slide['seemoreText'])){
+    $slide['seemoreText'] = 'See more';
+} ?>
+       <div class="mw-ui-field-holder">
+           <label class="mw-ui-label">See more text</label>
+           <input type="text" class="mw-ui-field magic-seemore" value="<?php print $slide['seemoreText']; ?>">
+       </div>
+
+
       <div class="magic-images">
         <ul class="magic-images-holder">
 
@@ -200,6 +210,7 @@
                 data[i] = {};
                 data[i]['primaryText'] = item.querySelector('.magic-main-text').value;
                 data[i]['secondaryText'] = item.querySelector('.magic-secondary-text').value;
+                data[i]['seemoreText'] = item.querySelector('.magic-seemore').value;
                 data[i]['url'] = item.querySelector('.magic-url').value;
                 data[i]['skin'] = item.querySelector('.magic-skinselector').value;
                 data[i]['images'] = '';

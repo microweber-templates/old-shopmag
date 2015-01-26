@@ -1,23 +1,28 @@
 <?php
 
-    $settings = get_option('settings', $params['id']);
+$settings = get_option('settings', $params['id']);
 
-    $defaults = array(
-        'images' => '',
-        'primaryText' => 'A Magic Slider',
-        'secondaryText' => 'Nunc blandit malesuada.',
-        'url' => '',
-        'urlText' => '',
-        'skin' =>'default'
-    );
-    $settings = get_option('settings', $params['id']);
+$defaults = array(
+    'images' => '',
+    'primaryText' => 'A Magic Slider',
+    'secondaryText' => 'Nunc blandit malesuada.',
+    'seemoreText' => 'See more',
+    'url' => '',
+    'urlText' => '',
+    'skin' => 'default'
+);
+$settings = get_option('settings', $params['id']);
 
-    $json = json_decode($settings, true);
+$json = json_decode($settings, true);
 
-    if(isset($json) == false or count($json) == 0){
-      $json = array(0 => $defaults);
-    }
-    $mrand = 'slider-' . uniqid();
+if (isset($json) == false or count($json) == 0) {
+    $json = array(0 => $defaults);
+}
+$mrand = 'slider-' . uniqid();
+
+
+
+
 ?>
 <script>
     mw.moduleCSS('<?php print $config['url_to_module']; ?>style.css');
@@ -26,34 +31,37 @@
 
 <div class="magic-slider" id="<?php print $mrand; ?>">
     <div class="magic-slider-slides">
-      <?php
-        foreach($json as $slide){
+        <?php
+        foreach ($json as $slide) {
 
-            if(!isset($slide['skin']) or $slide['skin'] == ''){
-              $slide['skin'] = 'default';
+            if (!isset($slide['skin']) or $slide['skin'] == '') {
+                $slide['skin'] = 'default';
             }
-            if(isset($slide['images'])){
-              $slide['images'] = explode(',', $slide['images']);
+            if (isset($slide['images'])) {
+                $slide['images'] = explode(',', $slide['images']);
+            } else {
+                $slide['images'] = array();
             }
-            else{
-              $slide['images'] = array();
+            if (!isset($slide['seemoreText'])) {
+                $slide['seemoreText'] = 'See more';
             }
-            include $config['path_to_module'] . 'skins/' . $slide['skin']. '.php';
+
+            include $config['path_to_module'] . 'skins/' . $slide['skin'] . '.php';
         }
-      ?>
+        ?>
     </div>
-    <?php if(count($json) > 1){ ?>
-      <span class="magic-slider-next"></span>
-      <span class="magic-slider-previous"></span>
+    <?php if (count($json) > 1) { ?>
+        <span class="magic-slider-next"></span>
+        <span class="magic-slider-previous"></span>
     <?php } ?>
 </div>
 
 <script>
 
-  $(document).ready(function(){
-    $(document.getElementById('<?php print $mrand; ?>')).magicSlider({
-    <?php if(count($json) > 1){ ?>    autoRotate:true     <?php } ?>
+    $(document).ready(function () {
+        $(document.getElementById('<?php print $mrand; ?>')).magicSlider({
+            <?php if(count($json) > 1){ ?>    autoRotate: true     <?php } ?>
+        });
     });
-  });
 
 </script>
