@@ -1,4 +1,3 @@
-
 <?php
     if(is_logged() == true){
         return mw()->url_manager->redirect(site_url().'profile/#section=profile');
