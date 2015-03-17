@@ -152,7 +152,7 @@
           </div>
       </div>
       <div class="mw-ui-field-holder">
-          <label class="mw-ui-label">URl</label>
+          <label class="mw-ui-label">Link</label>
           <input type="text" class="mw-ui-field magic-url" value="<?php print $slide['url']; ?>">
       </div>
 <?php if(!isset($slide['seemoreText'])){
