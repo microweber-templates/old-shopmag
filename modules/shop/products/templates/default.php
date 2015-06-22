@@ -63,17 +63,16 @@ if(!isset($tn[1])){
 
       <?php if($show_fields == false or in_array('thumbnail', $show_fields)): ?>
 
-
-      <a href="<?php print $item['link'] ?>" class="bgimage-fader">
-
-      <?php
+<?php
 
         $pictures = get_pictures($item['id']);
-
-
+ 
 
         ?>
 
+      <a href="<?php print $item['link'] ?>" class="bgimage-fader">
+
+      
       <span class="<?php print (isset( $pictures[1]) ? 'multiple-thumbnails': 'single-thumbnail'); ?>" style="background-image: url(<?php print thumbnail($item['image'], $tn[0], $tn[1]); ?>);"></span>
       <?php if(isset( $pictures[1])){ ?>
       <span style="background-image: url(<?php print thumbnail($pictures[1]['filename'], $tn[0], $tn[1]); ?>);"></span>
