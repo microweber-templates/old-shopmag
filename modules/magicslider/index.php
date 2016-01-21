@@ -62,6 +62,14 @@ $mrand = 'slider-' . uniqid();
         $(document.getElementById('<?php print $mrand; ?>')).magicSlider({
             <?php if(count($json) > 1){ ?>    autoRotate: true     <?php } ?>
         });
+		
+		
+		$(window).on('resize', function(){
+     $(document.getElementById('<?php print $mrand; ?>')).magicSlider({
+            <?php if(count($json) > 1){ ?>    autoRotate: true     <?php } ?>
+        });
+		});
+		
     });
 
 </script>

@@ -20,6 +20,15 @@
   min-height: 650px !important;
 }
 
+
+@media (max-width: 750px) {
+    .magic-slider, .magic-slider .mw-ui-row-nodrop, .magic-slider .magic-rotator-slide{
+	  min-height: 100px !important;
+	}
+}
+
+
+
 </style>
 
   <div class="edit" rel="content" field="content">
