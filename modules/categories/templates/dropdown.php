@@ -23,7 +23,7 @@ description: Dropdown skin
     }
 
 ?>
-<div class="mw-dropdown mw-dropdown-default w100 categories-dropdown" style="width: 200px;">
+<div class="mw-dropdown mw-dropdown-default w100 categories-dropdown">
   <span class="mw-dropdown-value mw-ui-btn mw-ui-btn-big mw-dropdown-val"><?php print $val; ?></span>
   <div class="mw-dropdown-content">
         <?php  category_tree($params);  ?>
