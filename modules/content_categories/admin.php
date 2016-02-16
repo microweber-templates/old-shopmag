@@ -1,7 +1,13 @@
-<?php $selected_category = false; ?>
+<?php  
+
+    $selected_category = get_option('fromcategory', $params['id']);
+    $show_category_header = get_option('show_category_header', $params['id']);
+
+
+?>
 
 <div class="module-live-edit-settings">
-    <style type="text/css" scoped="scoped">
+  <style type="text/css" scoped="scoped">
 
         #parentcat .depth-1{
           padding-left: 10px;
@@ -19,12 +25,14 @@
         }
 
     </style>
-
   <?php  $trees = get_categories('limit=1000&parent_id=0&rel=content');  ?>
   <label class="mw-ui-label">Select parent category</label>
   <select name="fromcategory" class="mw_option_field mw-ui-field w100" id="parentcat">
     <option  <?php if((0 == intval($selected_category))): ?>   selected="selected"  <?php endif; ?>>
     <?php _e("None"); ?>
+    </option>
+    <option  <?php if(('current' == $selected_category)): ?>   selected="selected"  <?php endif; ?> value="current">
+    <?php _e("Current"); ?>
     </option>
     <?php
   
@@ -44,5 +52,22 @@
  
 ?>
   </select>
+  
+  
+  
+  <label class="mw-ui-label">Show category header</label>
+  <select name="show_category_header" class="mw_option_field mw-ui-field w100">
+    <option value="0"  <?php if((0 == intval($show_category_header))): ?>   selected="selected"  <?php endif; ?>>
+    <?php _e("No"); ?>
+    </option>
+    <option  value="1" <?php if((1 == intval($show_category_header))): ?>   selected="selected"  <?php endif; ?>>
+    <?php _e("Yes"); ?>
+    </option>
+    
+    </select>
+    
+  
+  
+  
 </div>
 <input type="hidden" name="settings" id="settingsfield" value="" class="mw_option_field" />

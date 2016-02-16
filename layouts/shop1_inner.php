@@ -1,1 +1,1 @@
-<?php include "shop_inner.php"; ?>
+<?php include __DIR__.DS."shop_inner.php"; ?>

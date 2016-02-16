@@ -6,12 +6,21 @@ $prev = prev_content();
 
 ?>
 <div class="mw-wrapper" style="padding: 40px 0px;" id="product-holder-<?php print CONTENT_ID ?>">
+
+
+<?php if(isset($show_category_header_block) and $show_category_header_block == true){ ?>
+
+<module type="categories/header" />
+
+
+<?php } ?>
+
     <div data-mw="main">
         <div class="mw-ui-row shop-product-row">
             <div class="mw-ui-col" style="width:55%">
                 <div class="mw-ui-col-container">
                     <div class="item-box" id="product-page-gallery">
-                        <module type="pictures" rel="content" template="product_gallery"/>
+                        <module type="pictures" rel="content" template="product_gallery_multiline"/>
                     </div>
                 </div>
             </div>
@@ -73,7 +82,7 @@ $prev = prev_content();
 
         <h2 class="section-title element">Related Products</h2>
         <hr>
-        <module type="shop/products" id="related-products-module" related="true" limit="4"
+        <module type="shop/products" id="related-products-module" related="true" limit="12"
                 ajax-paging="true"
                 data-show="thumbnail,title,add_to_cart,price"/>
 

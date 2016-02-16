@@ -1,5 +1,20 @@
 <?php
 
+    $parent = get_option('fromcategory', $params['id']);
+	$show_category_header = get_option('show_category_header', $params['id']);
+
+	if($parent == 'current'){
+	$parent = CATEGORY_ID;	
+	}
+	
+	 
+	
+    if(!isset($parent) or $parent == ''){
+      $parent = 0;
+    }
+    $cats = get_categories('order_by=position asc&parent_id=' . $parent);
+ 
+
     $module_template = get_option('data-template', $params['id']);
 
 if($module_template != false and $module_template != 'none'){
