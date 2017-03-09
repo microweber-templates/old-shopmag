@@ -1,2 +1,2 @@
- <?php include('blog_inner.php'); ?>
-
+ <?php include('blog_inner.php'); ?>
+
