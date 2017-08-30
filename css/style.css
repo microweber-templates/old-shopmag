@@ -207,6 +207,7 @@ select.form-control{
 }
 .gateway-selector {
 	padding: 15px 0;
+	list-style-type: none;
 }
 .gateway-selector li {
 	padding: 6px 0;

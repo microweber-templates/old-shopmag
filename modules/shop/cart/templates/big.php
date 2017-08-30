@@ -72,7 +72,7 @@ description: Full width cart template
 	}
 
 	 if(is_array($shipping_options)) :?>
-    <?php if(get_option('shop_require_registration', 'website') == 'y' and is_logged() == false): ?>
+    <?php if(get_option('shop_require_registration', 'website') == '1' and is_logged() == false): ?>
     <?php else: ?>
     <div class="mw-ui-col" style="width: 340px;">
       <div class="order-summary-table-holder">
@@ -123,9 +123,9 @@ description: Full width cart template
               <td><label>
                   <?php _e("Total Price"); ?>
                   :</label></td>
-              <?php 
+              <?php
 		  $print_total=cart_total();
-		  
+
 		    ?>
               <td  class="cell-shipping-total"><span class="total_cost"><?php print currency_format($print_total); ?></span></td>
             </tr>

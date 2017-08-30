@@ -22,7 +22,7 @@ description: Default cart template
 
 
 <?php if ($payment_success == false): ?>
-    <?php if(get_option('shop_require_registration', 'website') == 'y' and is_logged() == false): ?>
+    <?php if($requires_registration and is_logged() == false): ?>
     <?php else: ?>
     <form class="mw-checkout-form" id="checkout_form_<?php print $params['id'] ?>" method="post" action="<?php print api_link('checkout') ?>">
     <?php endif; ?>
@@ -31,7 +31,7 @@ description: Default cart template
             <module type="shop/cart" template="big" id="cart_checkout_<?php print $params['id'] ?>" data-checkout-link-enabled="n"/>
         <?php endif;?>
 
-     <?php if(get_option('shop_require_registration', 'website') == 'y' and is_logged() == false): ?>
+     <?php if($requires_registration and is_logged() == false): ?>
         <?php include THIS_TEMPLATE_DIR. "signin.php"; ?>
      <?php else: ?>
 
@@ -99,11 +99,44 @@ description: Default cart template
         </div>
         <div class="alert hide"></div>
         <div class="mw-cart-action-holder">
+
+        <?php if($requires_terms): ?>
+			<script type="text/javascript">
+
+			$( document ).ready(function() {
+
+				   $('#i_agree_with_terms_row').click(function() {
+					var el = $('#i_agree_with_terms');
+					if(el.is(':checked')) {
+						 $('#complete_order_button').removeAttr('disabled');
+					} else {
+						 $('#complete_order_button').attr('disabled','disabled');
+					}
+				});
+
+			});
+
+			</script>
+
+			<div class="mw-ui-row control-group" id="i_agree_with_terms_row">
+			<label class="mw-ui-check">
+			  <input type="checkbox" class="form-control" name="terms" id="i_agree_with_terms" value="1" autocomplete="off" />
+			  <span class="edit" field="i_agree_with_terms_text" rel="shop_checkout">
+			  I agree with the
+			  <a href="<?php print site_url('terms-and-conditions') ?>" target="_blank">
+			   Terms and Conditions
+			  </a>
+
+			  </span>
+			  </label>
+			  </div>
+		 <?php endif; ?>
+
             <hr/>
             <?php $shop_page = get_content('is_shop=0');      ?>
-            <button class="mw-ui-btn mw-ui-btn-invert mw-ui-btn-big uppercase pull-right" style="min-width: 340px"
+            <button id="complete_order_button" class="mw-ui-btn mw-ui-btn-invert mw-ui-btn-big uppercase pull-right" style="min-width: 340px"
                     onclick="mw.cart.checkout('#checkout_form_<?php print $params['id'] ?>');"
-                    type="button"><?php _e("Complete order"); ?></button>
+                    type="button" <?php if($requires_terms): ?> disabled="disabled"   <?php endif; ?>><?php _e("Complete order"); ?></button>
             <?php if (is_array($shop_page)): ?>
                 <a href="<?php print page_link($shop_page[0]['id']); ?>" class="mw-ui-btn uppercase pull-left"><?php _e("Continue Shopping"); ?></a>
             <?php endif; ?>
@@ -111,7 +144,7 @@ description: Default cart template
 
         <?php }  ?>
         <?php endif; ?>
-    <?php if(get_option('shop_require_registration', 'website') == 'y' and is_logged() == false): ?>
+    <?php if($requires_registration and is_logged() == false): ?>
     <?php else: ?>
     </form>
     <?php endif; ?>
