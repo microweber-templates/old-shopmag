@@ -1,32 +1,20 @@
 <?php
 
-
 /*
-
-
 
 type: layout
 
-
-
 name: Big
-
-
 
 description: Full width cart template
 
-
-
 */
-
-
 ?>
 
 
 <div class="mw-cart mw-cart-big mw-cart-<?php print $params['id'] ?> <?php print  $template_css_prefix; ?>">
 
     <div class="mw-cart-title mw-cart-<?php print $params['id'] ?>">
-
 
     </div>
 
@@ -183,7 +171,6 @@ description: Full width cart template
                                     td {
 
                                         white-space: nowrap;
-
                                     }
 
                                     .checkout-total-table {
