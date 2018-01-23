@@ -1,0 +1,1 @@
+<?php/*type: layoutname: Google mapsposition: 9*/?><div class="nodrop safe-mode edit" field="layout-skin-9-<?php print $params['id'] ?>" rel="module">    <div class="mw-wrapper contact-us-page">        <div class="richtext">            <module type="google_maps"/>        </div>    </div></div>
