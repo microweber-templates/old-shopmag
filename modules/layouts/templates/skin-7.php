@@ -16,7 +16,7 @@ position: 7
     <div class="mw-wrapper content-holder">
         <div class="item-box pad">
             <h3 class="page-title">Page Title</h3>
-            <div>
+            <div class="allow-drop">
                 <p class="element">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel tincidunt orci. Phasellus eget suscipit nisi. Maecenas fringilla velit non erat porttitor, eget mollis enim
                     fermentum.
