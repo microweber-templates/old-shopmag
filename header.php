@@ -54,7 +54,7 @@ if ($template_settings != false) {
     $template_settings = array();
 }
 ?>
-<body class="<?php print(implode(' ', $template_settings)); ?>">
+<body class="<?php print(implode(' ', $template_settings)); ?> <?php print helper_body_classes(); ?>">
 <div id="wrapper">
 
     <div id="content-master">
