@@ -1,0 +1,16 @@
+{
+  "name": "microweber-templates/shopmag",
+  "description": "Shop template",
+  "homepage": "https://github.com/microweber-templates/shopmag",
+  "license": "MIT",
+  "keywords": [
+    "bootstrap3",
+    "shop",
+    "responsive"
+  ],
+  "type": "microweber-template",
+  "extra": {
+    "folder": "shopmag",
+    "mw-version": "1.*"
+  }
+}
