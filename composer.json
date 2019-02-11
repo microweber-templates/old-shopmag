@@ -1,0 +1,9 @@
+{
+    "name": "microweber/template-shopmag",
+    "type": "microweber-template",
+	"description": "ShopMag",
+    "extra": {
+        "folder": "shopmag"
+    },
+  "target-dir": "shopmag"
+}
