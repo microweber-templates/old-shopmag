@@ -1,26 +1,16 @@
 {
-<<<<<<< HEAD
-    "name": "microweber/template-shopmag",
-    "type": "microweber-template",
-	"description": "ShopMag",
-    "extra": {
-        "folder": "shopmag"
-    },
-  "target-dir": "shopmag"
-=======
-  "name": "microweber-templates/shopmag",
-  "description": "Shop template",
+  "name": "microweber/template-shopmag",
+  "description": "ShopMag",
   "homepage": "https://github.com/microweber-templates/shopmag",
+  "type": "microweber-template",
   "license": "MIT",
   "keywords": [
     "bootstrap3",
     "shop",
     "responsive"
   ],
-  "type": "microweber-template",
   "extra": {
-    "folder": "shopmag",
     "mw-version": "1.*"
-  }
->>>>>>> 027d8d17fc15e8d8712006d934d9f702e5d50081
+  },
+  "target-dir": "shopmag"
 }
