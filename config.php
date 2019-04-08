@@ -4,4 +4,4 @@ $config = array();
 $config['name'] = "ShopMag";
 $config['description'] = "";
 $config['author'] = "Microweber";
-$config['version'] = 1.6;
+$config['version'] = 1.4;
