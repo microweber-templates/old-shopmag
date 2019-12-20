@@ -1,0 +1,1 @@
+<?php/*type: layoutcontent_type: staticname: Cleanposition: 2is_default: truedescription: Clean layout*/?><?php include TEMPLATE_DIR . "header.php"; ?><div class="edit" rel="content" field="shopmag_content">    <!-- Do not remove this tag --></div><?php include TEMPLATE_DIR . "footer.php"; ?>

@@ -1,0 +1,30 @@
+{
+  "name": "microweber/template-shopmag",
+  "type": "microweber-template",
+  "description": "ShopMag",
+  "keywords": [
+    "microweber",
+    "ecommerce",
+    "shopmag"
+  ],
+  "homepage": "https://microweber.org/templates/microweber/template-shopmag",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "MW Team",
+      "email": "contacts@microweber.com"
+    }
+  ],
+  "support": [
+    {
+      "email": "support@microweber.com",
+      "forum": "https://microweber.com/forum",
+      "irc": "https://webchat.freenode.net/?embed=1&channels=#microweber",
+      "docs": "http://docs.microweber.com"
+    }
+  ],
+  "target-dir": "shopmag",
+  "extra": {
+    "preview_url": "http://shopmag-template.microweber.com/"
+  }
+}
